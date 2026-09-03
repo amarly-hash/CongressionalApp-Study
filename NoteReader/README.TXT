@@ -1,0 +1,1 @@
+Alright, so you gotta figure out how java handles paths, and then you can have it pass it as a string to the display notes function.

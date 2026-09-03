@@ -5,13 +5,15 @@ public class PomoTimer
     int hour;
     int Min;
     int breakHour;
-    int breakmin;
-    public PomoTimer(int hour, int min, int breakHour, int breakmin)
+    int breakMin;
+    Timer pomoTime = new Timer();
+    TimerTask handler = new TimerHandler();
+    public PomoTimer(int hour, int min, int breakHour, int breakMin)
     {
         this.hour = hour;
         this.Min = Min;
         this.breakHour = breakHour;
-        this.breakmin = breakmin;
+        this.breakMin = breakMin;
     }
     //we writing setter methods now ✌️#movingupintheworld
     public void setWorkPomoTimer(int newHour, int newMin)
@@ -23,7 +25,7 @@ public class PomoTimer
     public void setBreakPomoTimer(int newBreakHour, int newBreakMin)
     {
         breakHour = newBreakHour;
-        breakmin = newBreakMin;
+        breakMin = newBreakMin;
     }
     //a getter method? how absurd
     public int getWorkPomoHour()
@@ -45,38 +47,24 @@ public class PomoTimer
         return breakHour;
     }
     //This method basically starts the timer and forces the program to pause for that long. returns true once its done
-    public boolean startPomodoro()
+    public boolean startPomodoro() throws InterruptedException
     {
         //so basically, what i gotta do is take the value from the getter, and turn it into miliseconds 
         int TotalWorkTime = (hour * 3600000) + (Min * 60000);
-        try
-        {
-            Thread.sleep(TotalWorkTime);
-        }
-        catch (InterruptedException ie)
-        {
-            ie.printStackTrace();
-        }
+        pomoTime.schedule(1000,TotalWorkTime);
         System.out.println("WorkTimerUp");
         return true;
     }
     //same as the previous, just takes the break times instead
-    public boolean startPomodoroBreak()
+    public boolean startPomodoroBreak() throws InterruptedException
     {
-        int TotalWorkTime = (breakHour * 3600000) + (breakmin * 60000);
-        try
-        {
-            Thread.sleep(TotalWorkTime);
-        }
-        catch (InterruptedException ie)
-        {
-            ie.printStackTrace();
-        }
+        int TotalBreakTime = (breakHour * 3600000) + (breakMin * 60000);
+        
         System.out.println("WorkTimerUp");
         return true;
     }
     
-    public static void main(String args[])
+    public static void main(String args[]) throws InterruptedException
     {
         Scanner scan = new Scanner(System.in);
         System.out.println("please enter a number of hour(s) for the pomodoro: ");
@@ -87,6 +75,8 @@ public class PomoTimer
         int hourBreak = scan.nextInt();
         System.out.println("please enter a number of minutes for the break: ");
         int minBreak = scan.nextInt();
+        PomoTimer pomodoro = new PomoTimer(hour, min, hourBreak, minBreak);
+        pomodoro.startPomodoro();
         
     }
 }
