@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.*;
 
-
 public class NoteReader 
 {
     String FileName;
@@ -10,26 +9,9 @@ public class NoteReader
         this.FileName = FileName;
     }
     
-    public String getNotes(File Notes)
-    {
-
-    try{
-    String notesString = "";
-    Scanner scan = new Scanner(Notes); 
-    while (scan.hasNextLine())
-    {
-        notesString = notesString + scan.nextLine();
-    }
-    return notesString;
-    }
     
-    catch(FileNotFoundException e)
-    {e.printStackTrace();}
-    
-    }
-    public String DisplayNotes()
+    public static String DisplayNotes()
     {
-        
-        return "hi";
+         return "hi";
     }
 }
