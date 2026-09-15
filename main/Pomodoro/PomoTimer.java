@@ -87,6 +87,21 @@ public class PomoTimer
         
        return true;
     }
+    public boolean startPomodoro(long x) 
+    {
+        //so basically, what i gotta do is take the value from the getter, and turn it into miliseconds 
+        try
+        {
+            Thread.sleep(x);
+        }
+        catch(Exception e)
+        {
+            System.out.println("WorkTimerUp"); 
+            System.out.println(e);
+        }
+        
+       return true;
+    }
     //same as the previous, just takes the break times instead
     public boolean startPomodoroBreak() 
     {

@@ -1,67 +1,36 @@
 import javax.swing.*;
+import javax.swing.event.*;
+import javax.swing.text.*;
 import java.awt.event.*;
 import java.awt.*;
 import Pomodoro.PomoTimer;
-import NoteReader.Notes;
 import NoteReader.NoteReader;
 import Clock.Clock;
+import java.util.Set;
+import java.beans.*;
+import java.time.LocalTime;
+import java.awt.Frame;
 
 public class main
 {
-    public void PomoWindow()
+    private static void createGUI()
     {
-        JPanel PomoPanel = new JPanel();
-        //you gotta make a smaller window that'll allow for the user to give input, and then pass it to the Pomodoro constructor
-        
-        int Currenthour = 0;
-        int Currentmin = 0;
-        int Currentsec = 0;
-        String Currenttime = (Currenthour + ":" + Currentmin + ":" + Currentsec);
-        
-        //displays time
-        Label PomoLabel = new Label(("Time Remaining: " + Currenttime));
-        
-        
-        
-        
-        //add the input from the gui field
-        /**
-        * PomoTimer Pomodoro = new PomoTimer();
-        */
-       
-        //Get the border lib later
-        //PomoPanel.setBorder(BorderFactory.createLineBorder(Color.orange));
-        
+        JFrame frame = new JFrame("StudyBuddy");
+        frame.add(new ClockWindow());
+        //frame.add(new PomoWindow);
+        frame.add(new notesContainer());
+        frame.pack();
+        frame.setVisible(true);
     }
-    public void notesContainer()
-    {
-        //so far, the program creates the window for the notes, then it puts it in the panel. Notes window has scrolling and tech wrapping
-        JPanel NoteViewPanel = new JPanel();
-        
-        //Setting up the notes window, getting notes from the note package
-        JTextArea NoteText = new JTextArea(Notes.getNotes());
-        NoteText.setFont(new Font("Serif", Font.ITALIC, 16)); //sets the font (might wanna change it l8r)
-        NoteText.setLineWrap(true);//you know what this does, don't play dumb
-        NoteText.setWrapStyleWord(true);// same here
-        NoteText.setEditable(false); //this line makes the text area editable
-        
-        //scrolling functionality so it can wrap text
-        JScrollPane NoteScroll = new JScrollPane();
-        NoteScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        
-        //prolly wanna change the dimensions l8r, idc about that rn tho :/
-        NoteScroll.setPreferredSize(new Dimension(250,250));
-        
-        //adds the stuff for the panels 
-        NoteViewPanel.add(NoteText); NoteViewPanel.add(NoteScroll);
-        
-    }
-    public void notesTaker()
-    {
-        //YO
-    }
-    public void clockDisplayer()
-    {
-        
+      public static void main(String[] args) {
+        //Schedule a job for the event dispatch thread:
+        //creating and showing this application's GUI.
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                //Turn off metal's use of bold fonts
+            UIManager.put("swing.boldMetal", Boolean.FALSE);
+                createGUI();
+            }
+        });
     }
 }
