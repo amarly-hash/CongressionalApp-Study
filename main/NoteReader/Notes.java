@@ -20,9 +20,9 @@ public class Notes
        while (true)
        {
            String word = scan.nextLine();
-           notes = notes + word + " ";        
+           notes = notes + word + " ";
            //this is just printing it out for now, so make sure to get rid of it l8r
-           System.out.println(notes);
+           System.out.println(";P");
            //ALL OF THIS CODE IS FOR SAVING THE NOTES. CONNECT THIS TO A SAVE FUNCTION LATER
            try 
            {
@@ -49,12 +49,14 @@ public class Notes
             while (scan.hasNextLine())
             {
                 String data = scan.nextLine();
-                System.out.println(data);
+                notesString = notesString + (data) + "\n";
+                
             }
         }
 
         catch(FileNotFoundException e)
         {e.printStackTrace();}
+        //System.out.println(notesString);
         return notesString;
     }
 

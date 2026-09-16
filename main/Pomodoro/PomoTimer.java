@@ -4,16 +4,16 @@ import java.util.*;
 public class PomoTimer
 {
     //THE TIMER WORKS, HUZZAH
-    
+
     //initializing variables for the constructor (realistically, you probably shouldve checked the documentation for the timer)
-    int hour;
-    int min;
-    int sec;
-    int breakHour;
-    int breakMin;
-    int BreakSec;
+    double hour;
+    double min;
+    double sec;
+    double breakHour;
+    double breakMin;
+    double BreakSec;
     //Constructor
-    public PomoTimer(int hour, int min, int sec, int breakHour, int breakMin, int BreakSec)
+    public PomoTimer(double hour, double min, double sec, double breakHour, double breakMin, double BreakSec)
     {
         this.hour = hour;
         this.min = min;
@@ -21,7 +21,7 @@ public class PomoTimer
         this.breakHour = breakHour;
         this.breakMin = breakMin;
         this.BreakSec = BreakSec;
-        
+
     }
     //we writing setter methods now ✌️#movingupintheworld
 
@@ -41,32 +41,32 @@ public class PomoTimer
     }
     //a getter method? how absurd
 
-    public int getWorkPomoHour()
+    public double getWorkPomoHour()
     {
         return hour;
     }
 
-    public int getWorkPomoMin()
+    public double getWorkPomoMin()
     {
         return min;
     }
-    
-    public int getWorkPomoSec()
+
+    public double getWorkPomoSec()
     {
         return sec;        
     }
     // i guess we're doing getters now
-    public int getPomoBreakHour()
+    public double getPomoBreakHour()
     {
         return breakHour;
     }
-    
-    public int getPomoBreakMin()
+
+    public double getPomoBreakMin()
     {
         return breakHour;
     }
-   
-    public int getPomoBreakSec()
+
+    public double getPomoBreakSec()
     {
         return BreakSec;        
     }
@@ -74,7 +74,7 @@ public class PomoTimer
     public boolean startPomodoro() 
     {
         //so basically, what i gotta do is take the value from the getter, and turn it into miliseconds 
-        long TotalWorkTime = (hour * 3600000) + (min * 60000) + (sec * 1000);
+        long TotalWorkTime = (long) ((hour * 3600000) + (min * 60000) + (sec * 1000));
         try
         {
             Thread.sleep(TotalWorkTime);
@@ -84,9 +84,10 @@ public class PomoTimer
             System.out.println("WorkTimerUp"); 
             System.out.println(e);
         }
-        
-       return true;
+
+        return true;
     }
+
     public boolean startPomodoro(long x) 
     {
         //so basically, what i gotta do is take the value from the getter, and turn it into miliseconds 
@@ -99,13 +100,13 @@ public class PomoTimer
             System.out.println("WorkTimerUp"); 
             System.out.println(e);
         }
-        
-       return true;
+
+        return true;
     }
     //same as the previous, just takes the break times instead
     public boolean startPomodoroBreak() 
     {
-        long TotalBreakTime = (breakHour * 3600000) + (breakMin * 60000) + (BreakSec * 1000 );
+        long TotalBreakTime = (long) ((breakHour * 3600000) + (breakMin * 60000) + (BreakSec * 1000));
         try
         {
             Thread.sleep(TotalBreakTime);
@@ -133,10 +134,9 @@ public class PomoTimer
         int minBreak = scan.nextInt();
         System.out.println("please enter a number of seconds for the break: ");
         int secBreak = scan.nextInt();
-        
-        
+
         PomoTimer pomodoro = new PomoTimer(hour, min, sec, hourBreak, minBreak, secBreak);
         pomodoro.startPomodoro();
-        
+
     }
 }

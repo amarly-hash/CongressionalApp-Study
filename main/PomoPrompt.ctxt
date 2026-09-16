@@ -1,7 +1,13 @@
 #BlueJ class context
 comment0.target=PomoPrompt
 comment1.params=
-comment1.target=void\ PomoPrompt()
+comment1.target=PomoPrompt()
 comment2.params=e
-comment2.target=void\ propertyChange(java.beans.PropertyChangeEvent)
-numComments=3
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=int\ getMin()
+comment4.params=
+comment4.target=int\ getSec()
+comment5.params=
+comment5.target=int\ getHour()
+numComments=6

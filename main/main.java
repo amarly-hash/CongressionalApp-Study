@@ -13,11 +13,19 @@ import java.awt.Frame;
 
 public class main
 {
-    private static void createGUI()
+    public static void createGUI()
     {
         JFrame frame = new JFrame("StudyBuddy");
+        frame.setLayout(new FlowLayout());
+        frame.setUndecorated(false);
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.getContentPane().setBackground(Color.BLACK);
+        frame.setSize((WindowSize.width / 5), WindowSize.height);
+        
         frame.add(new ClockWindow());
-        //frame.add(new PomoWindow);
+        frame.add(new PomoWindow());
         frame.add(new notesContainer());
         frame.pack();
         frame.setVisible(true);

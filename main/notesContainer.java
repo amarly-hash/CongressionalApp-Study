@@ -13,11 +13,11 @@ public class notesContainer extends JPanel
 
         //Setting up the notes window, getting notes from the note package
         JTextArea NoteText = new JTextArea(Notes.getNotes());
+        System.out.println(Notes.getNotes());
         NoteText.setFont(new Font("Serif", Font.ITALIC, 16)); //sets the font (might wanna change it l8r)
         NoteText.setLineWrap(true);//you know what this does, don't play dumb
         NoteText.setWrapStyleWord(true);// same here
-        NoteText.setEditable(false); //this line makes the text area editable
-
+        NoteText.setEditable(false); //this line makes the text area NOT editable
         //scrolling functionality so it can wrap text
         JScrollPane NoteScroll = new JScrollPane();
         NoteScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
