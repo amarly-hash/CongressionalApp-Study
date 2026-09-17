@@ -26,8 +26,10 @@ public class Notes
            //ALL OF THIS CODE IS FOR SAVING THE NOTES. CONNECT THIS TO A SAVE FUNCTION LATER
            try 
            {
+               
                FileWriter myWriter = new FileWriter("notes.txt");
                myWriter.write(notes);
+               System.out.print(":}");
                //you should prob connect this to the button code later
                myWriter.close();
            }
@@ -56,7 +58,7 @@ public class Notes
 
         catch(FileNotFoundException e)
         {e.printStackTrace();}
-        //System.out.println(notesString);
+        System.out.println(notesString);
         return notesString;
     }
 

@@ -4,15 +4,21 @@ import java.awt.Font;
 import javax.swing.JScrollPane;
 import java.awt.Dimension;
 import NoteReader.Notes;
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
+
 public class notesContainer extends JPanel
 {
+    private String noteString = Notes.getNotes();
     public notesContainer()
     {
         //so far, the program creates the window for the notes, then it puts it in the panel. Notes window has scrolling and tech wrapping
-        JPanel NoteViewPanel = new JPanel();
+        super(new BorderLayout());
+        JFrame NoteViewPanel = new JFrame();
 
         //Setting up the notes window, getting notes from the note package
-        JTextArea NoteText = new JTextArea(Notes.getNotes());
+        JTextArea NoteText = new JTextArea("peenar");
+        //NoteText.setText(noteString);
         System.out.println(Notes.getNotes());
         NoteText.setFont(new Font("Serif", Font.ITALIC, 16)); //sets the font (might wanna change it l8r)
         NoteText.setLineWrap(true);//you know what this does, don't play dumb
@@ -28,6 +34,6 @@ public class notesContainer extends JPanel
         //adds the stuff for the panels 
         NoteViewPanel.add(NoteText); NoteViewPanel.add(NoteScroll);
 
-        NoteViewPanel.setVisible(true);
+        //NoteViewPanel.setVisible(true);
     }
 }
