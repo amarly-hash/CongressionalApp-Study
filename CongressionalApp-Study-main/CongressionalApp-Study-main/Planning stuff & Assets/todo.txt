@@ -1,0 +1,24 @@
+alright, this'll be the planning doc
+
+make the note taker by creating a new gui element, then checking for the size of the window to handle wrapping. find out how to force the scanner to take input every frame, and then have it input constantly (or just see if swing has a built-in text box, idk, im not your dad). 
+
+make the music player, and make the three buttons that allow for playing the music, pausing, and swapping between tracks (No shuffle, i don't hate myself enough to do that)
+
+merge all the classes together so the gui lib can actually use all of them in the same window, instead of each class making its own window.
+
+
+find a viable deadline, so you have time to finish the project, make the video, and try to add some of the won't adds. 
+
+brainstorm better names (Maybe StudyBuddy or something???)
+
+
+Library's to use:
+Gui:
+https://docs.oracle.com/javase/8/docs/api/javax/swing/package-summary.html
+
+
+good rgbs for the ui:
+
+255, 165, 0 (orange)
+
+200,200,255 (Baby blue cyan)

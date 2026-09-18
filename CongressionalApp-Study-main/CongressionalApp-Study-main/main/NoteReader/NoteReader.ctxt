@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=NoteReader
+comment1.params=FileName
+comment1.target=NoteReader(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ DisplayNotes()
+numComments=3
