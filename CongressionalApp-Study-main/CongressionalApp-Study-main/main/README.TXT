@@ -13,3 +13,5 @@ Fix color issue in PomoPrompt
 Clean up GUI
 
 set up main so it can open PomoPrompt and notesTaker in their own respective windows
+
+Fix GUI, and get elements to show up in panels

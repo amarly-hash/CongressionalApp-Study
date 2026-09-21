@@ -58,7 +58,7 @@ public class Notes
 
         catch(FileNotFoundException e)
         {e.printStackTrace();}
-        System.out.println(notesString);
+        //System.out.println(notesString);
         return notesString;
     }
 

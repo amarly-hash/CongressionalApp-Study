@@ -8,7 +8,7 @@ public class notesContainer extends JPanel
     {
         //so far, the program creates the window for the notes, then it puts it in the panel. Notes window has scrolling and tech wrapping
         /*# THIS JFrame IS FOR TESTING, WILL BE REMOVED IN FINAL PRODUCT*/
-        JFrame test = new JFrame();
+        //JFrame test = new JFrame();
         JPanel NoteViewPanel = new JPanel();
 
         //Setting up the notes window, getting notes from the note package
@@ -30,7 +30,7 @@ public class notesContainer extends JPanel
         NoteViewPanel.add(NoteScroll);
         NoteViewPanel.setVisible(true);
         /*#ONCE AGAIN, THESE WILL BE REMOVED*/
-        test.add(NoteViewPanel);
-        test.setVisible(true);
+        //test.add(NoteViewPanel);
+        //test.setVisible(true);
     }
 }

@@ -28,6 +28,6 @@ public class PomoWindow extends JPanel
 
         //Get the border lib later
         PomoPanel.setBorder(BorderFactory.createLineBorder(Color.orange));
-        PomoPanel.setVisible(true);
+        //PomoPanel.setVisible(true);
     } 
 }

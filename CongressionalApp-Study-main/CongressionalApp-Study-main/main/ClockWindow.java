@@ -26,7 +26,7 @@ public class ClockWindow extends JPanel
         Clock.add(timeLabel);
         timer.start();
         Clock.setSize(10,20);
-        Clock.setVisible(true);
+        //Clock.setVisible(true);
     }
 }
 
