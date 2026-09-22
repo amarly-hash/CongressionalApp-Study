@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.target=notesTaker
-comment0.text=Writes\ to\ notes.txt\ for\ future\ reference,\ and\ allows\ user\ to\ make\ new\ notes\ files.(Might\ add,\ if\ i\ do,\ make\ sure\ to\ go\ to\ notes\ container,\ and\ mess\ with\ the\ file\ ref)
 comment1.params=
 comment1.target=void\ notesTaker()
-numComments=2
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=3

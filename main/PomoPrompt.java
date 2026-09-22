@@ -7,8 +7,9 @@ import javax.swing.JButton;
 import java.beans.*;
 import javax.swing.event.DocumentListener;
 import java.awt.event.*;
+import javax.swing.JPanel;
 
-public class PomoPrompt extends JFrame implements ActionListener{
+public class PomoPrompt extends JPanel implements ActionListener{
     int[] PomoTimearray = {1,2,3};
     JFormattedTextField PomoSec = new JFormattedTextField("");
     JFormattedTextField PomoMin = new JFormattedTextField("");
@@ -17,7 +18,7 @@ public class PomoPrompt extends JFrame implements ActionListener{
     public PomoPrompt()
     {
         //sets up all of the window stuff, like the layout, size, visibilty, and makes it visible
-        JFrame PromptWindow = new JFrame();
+        JPanel PromptWindow = new JPanel();
         PromptWindow.setLayout(new FlowLayout());
         PromptWindow.setSize(350, 200);
 
@@ -39,10 +40,10 @@ public class PomoPrompt extends JFrame implements ActionListener{
         PromptWindow.add(HourQuestion);
         PromptWindow.add(PomoHour);
         PromptWindow.add(PomoEnter);
-        PromptWindow.setResizable(false);
+        /**PromptWindow.setResizable(false);*/
         PromptWindow.setVisible(true);
-        //PromptWindow.setBackground(COLOR.black);
-        PromptWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        /**PromptWindow.setBackground(COLOR.black);*/
+        /**PromptWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
         //saves values to an array
     }
         public void actionPerformed(ActionEvent e)
