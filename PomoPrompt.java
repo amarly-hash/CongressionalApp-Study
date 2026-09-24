@@ -32,18 +32,19 @@ public class PomoPrompt extends JPanel implements ActionListener{
         PomoSec.setPreferredSize(new Dimension(25, 20)); PomoMin.setPreferredSize(new Dimension(25, 20)); PomoHour.setPreferredSize(new Dimension(25, 20));        //
 
         //adds everything to the frame
-        PromptWindow.add(TimeQuestion);
-        PromptWindow.add(SecQuestion);
-        PromptWindow.add(PomoSec);
-        PromptWindow.add(MinQuestion);
-        PromptWindow.add(PomoMin);
-        PromptWindow.add(HourQuestion);
-        PromptWindow.add(PomoHour);
-        PromptWindow.add(PomoEnter);
+        add(TimeQuestion);
+        add(SecQuestion);
+        add(PomoSec);
+        add(MinQuestion);
+        add(PomoMin);
+        add(HourQuestion);
+        add(PomoHour);
+        add(PomoEnter);
         /**PromptWindow.setResizable(false);*/
         PromptWindow.setVisible(true);
         /**PromptWindow.setBackground(COLOR.black);*/
         /**PromptWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
+        add(PromptWindow);
         //saves values to an array
     }
         public void actionPerformed(ActionEvent e)

@@ -17,10 +17,11 @@ public class test
 
         //creates a panel to hold the elements
         JPanel panel = new JPanel(new FlowLayout());
-        
+        panel.add(new PomoPrompt());
         //creates a border using the BorderFactory class
         panel.setBorder(BorderFactory.createLineBorder(Color.black));
         frame.add(panel);
+        
         //maskes the frame visible (based off of boolean, so you could make it conditional if you wanted to)
         frame.setVisible(true);
         frame.pack();

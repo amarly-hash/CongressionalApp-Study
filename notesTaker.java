@@ -6,8 +6,9 @@ import java.awt.*;
 import java.io.*;
 public class notesTaker extends JPanel implements ActionListener
 {
-    private String NotesTaken = "";
-    JTextArea UserNoteText = new JTextArea("Type your notes here!");
+    private String NotesTaken = Notes.getNotes("UserNotes.txt");
+    JTextArea UserNoteText = new JTextArea(NotesTaken);
+    
     public notesTaker()
     {
         //creating the text area
@@ -22,7 +23,7 @@ public class notesTaker extends JPanel implements ActionListener
         //prolly wanna change the dimensions l8r, idc about that rn tho :/
         UserNoteScroll.setPreferredSize(new Dimension(250,250));
         //creating save button
-        JButton save = new JButton("Save");
+        JButton save = new JButton("Save Notes");
         save.addActionListener(this);
         //makes visible
         add(save);
@@ -31,31 +32,30 @@ public class notesTaker extends JPanel implements ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
-        //write to file
         NotesTaken = UserNoteText.getText();
-        //If file doesn't exist, create it 
         try
         {
+            //creates the file
             File UserNotes = new File("UserNotes.txt");
-            if (UserNotes.createNewFile())
+            if (UserNotes.exists() == false)
             {
-                //yay
+                UserNotes.createNewFile();
+                NotesTaken = "Type your notes here";
             }
-            else
-            {
-                //yooo
-            }
-        }
-        catch(IOException execption) 
-        {
-            System.out.println("An error has occurred.");
-            execption.printStackTrace();
-        }
-        //writes data to file
-        try
-        {
             FileWriter noteTaker = new FileWriter("UserNotes.txt");
-            noteTaker.write(NotesTaken);
+            NotesTaken = UserNoteText.getText();
+            try
+            {
+                BufferedWriter NoteBuffer = new BufferedWriter(noteTaker);
+                NoteBuffer.write(NotesTaken);
+                NoteBuffer.flush();
+                NoteBuffer.close();                
+            }
+            catch(Exception execption) 
+            {
+                System.out.println("An error has occurred.");
+                execption.printStackTrace();
+            }
         }
         catch(IOException execption) 
         {

@@ -50,7 +50,7 @@ public class CreateGUI extends JPanel
         //Formatting, adding, and other housekeeping
         mainFrame.setLayout(new FlowLayout());   
         //mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainFrame.getContentPane().setBackground(Color.BLACK);
+        //mainFrame.getContentPane().setBackground(Color.BLACK);
         
         //resizes the window based off the returned value
         mainFrame.setSize((WindowSize.width / 5), WindowSize.height);

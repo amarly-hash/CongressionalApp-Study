@@ -13,18 +13,22 @@ public class ClockWindow extends JPanel
     {
         super (new BorderLayout());
         JLabel timeLabel = new JLabel(hour + ":" + min +":"+ sec);
-        Timer timer = new Timer(1000, new ActionListener()
+        Timer timer = new Timer(500, new ActionListener()
         {
+             @Override
              public void actionPerformed(ActionEvent e)    
              {
-                  min = time.getMinute();
-                  hour = time.getHour();
-                  sec = time.getSecond();
-                  if (min < 10){timeLabel.setText(hour + ":0" + min + ":" + sec);}            
-                  else {timeLabel.setText(hour+":"+min+":"+sec);}
+                LocalTime time = LocalTime.now(); 
+                min = time.getMinute();
+                hour = time.getHour();
+                sec = time.getSecond();
+                if (min < 10){timeLabel.setText(hour + ":0" + min + ":" + sec);}            
+                else {timeLabel.setText(hour+":"+min+":"+sec);}
+                  
              }
         });
         add(timeLabel);
+        timer.setRepeats(true);
         timer.start();
         setSize(10,20);
         repaint();

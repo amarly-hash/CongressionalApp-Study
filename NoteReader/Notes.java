@@ -42,10 +42,10 @@ public class Notes
        //return notes;
    }
    //TL;DR: open file, and display contents
-   public static String getNotes()
+   public static String getNotes(String Path)
     {
         String notesString = "";
-        File NoteFile = new File("notes.txt");
+        File NoteFile = new File(Path);
         try (Scanner scan = new Scanner(NoteFile))
         { 
             while (scan.hasNextLine())
