@@ -1,0 +1,8 @@
+#BlueJ class context
+#Fri Sep 25 08:50:21 EDT 2026
+comment0.target=CreateGUI
+comment1.target=CreateGUI()
+comment2.params=args
+comment2.target=void main(java.lang.String[])
+comment2.text=\#THIS IS NOT THREAD SAFE\!\!\!\!\!\!\!\!
+numComments=3
