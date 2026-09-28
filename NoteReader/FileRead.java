@@ -1,4 +1,4 @@
-package main.NoteReader;
+package NoteReader;
 //this is an example program to show how to read files
 import java.util.Scanner;
 import java.io.FileWriter;

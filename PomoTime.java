@@ -1,9 +1,6 @@
-package main;
-
 import javax.swing.*;
 import java.awt.*;
 import Pomodoro.PomoTimer;
-import java.io.File;
 import java.awt.event.*;
 
 /*#NOT FINISHED*/
@@ -14,25 +11,28 @@ public class PomoTime extends JPanel implements ActionListener
     private int Currentsec = 0;
     private int timeMin = 0;
     private int timeHour = 0;
-    public void PomoTime()
+    Color Y1Palette = new Color(251, 242, 53);
+    Color Y3Palette = new Color(255, 255, 255);
+    JLabel PomoLabel = new JLabel();
+    JButton PomoButton = new JButton("Set Pomodoro");
+    public PomoTime()
     {
-        //Gets the time using popups
-        JButton PomoButton = new JButton("Set Pomodoro");
-        PomoButton.addActionListener(this);
-
-        String Currenttime = (Currenthour + ":" + Currentmin + ":" + Currentsec);
+        String Currenttime = ("Time Remaining: " + Currenthour + ":" + Currentmin + ":" + Currentsec);
         //displays time
-        JLabel PomoLabel = new JLabel("Time Remaining: " + Currenttime);
+        PomoLabel.setText(Currenttime);
         
+        //💫?Graphic design is my passion💫
+        setBackground(Y1Palette);
+        setBorder(BorderFactory.createBevelBorder(0,Y3Palette, Y1Palette));
+        //Gets the time using popups
+        
+        PomoButton.addActionListener(this);
         //adding
         add(PomoLabel);
         add(PomoButton);
+        
         //add the input from the gui field
         PomoTimer Pomodoro = new PomoTimer(Currenthour, Currentmin, Currentsec, (int) (Currenthour / 2.5), (Currentmin / 2.5), (Currentsec / 2.5));
-
-        //Get the border lib later
-        setBorder(BorderFactory.createLineBorder(Color.orange));
-        repaint();        
     }
     //Makes a popup window using PomoPrompt to get user input for creating the Pomodoro
     public void actionPerformed(ActionEvent e)

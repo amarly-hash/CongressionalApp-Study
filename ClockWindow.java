@@ -1,5 +1,3 @@
-package main;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -11,10 +9,13 @@ public class ClockWindow extends JPanel
     private int hour = 0;
     private int sec = 0;
     private LocalTime time = LocalTime.now();
+    Color Y3Palette = new Color(255, 255, 255);
+    Color Y6Palette = new Color(218, 218, 218);
+    Color Y9Palette = new Color(0,0,0);
     public ClockWindow()
     {
-        super (new BorderLayout());
         JLabel timeLabel = new JLabel(hour + ":" + min +":"+ sec);
+        timeLabel.setBackground(Y6Palette);
         Timer timer = new Timer(500, new ActionListener()
         {
              @Override

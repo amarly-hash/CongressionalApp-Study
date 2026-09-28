@@ -1,5 +1,3 @@
-package main;
-
 import javax.swing.*;
 import java.awt.*;
 /*#For testing purposes only, do NOT keep this in the final version!!!!*/
@@ -19,12 +17,12 @@ public class test
 
         //creates a panel to hold the elements
         JPanel panel = new JPanel(new FlowLayout());
-        panel.add(new PomoTime());
-        panel.add(new ClockWindow());
+        frame.add(new PomoTime());
+        //panel.add(new ClockWindow());
         //creates a border using the BorderFactory class
-        panel.setBorder(BorderFactory.createLineBorder(Color.black));
-        frame.add(panel);
-        
+        //panel.setBorder(BorderFactory.createLineBorder(Color.black));
+        //frame.add(panel);
+        frame.getContentPane().setBackground(Color.BLACK);        
         //maskes the frame visible (based off of boolean, so you could make it conditional if you wanted to)
         frame.setVisible(true);
         frame.pack();

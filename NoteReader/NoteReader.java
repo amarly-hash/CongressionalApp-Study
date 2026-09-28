@@ -1,4 +1,4 @@
-package main.NoteReader;
+package NoteReader;
 
 import java.io.*;
 import java.util.*;

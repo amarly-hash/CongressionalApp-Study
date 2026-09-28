@@ -1,4 +1,4 @@
-package main.Pomodoro;
+package Pomodoro;
 
 import java.util.*;
 public class PomoTimer
