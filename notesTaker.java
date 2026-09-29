@@ -27,11 +27,14 @@ public class notesTaker extends JPanel implements ActionListener
         save.addActionListener(this);
         
         //💫?Graphic design is my passion💫
-        Color Y2Palette = new Color(247, 241, 143);
-        Color Y4Palette = new Color(246, 243, 188);
+        
+        Color Y1Palette = new Color(247, 241, 143);
+        Color Y3Palette = new Color(246, 243, 188);
         Color Y7Palette = new Color(211, 161, 110);
-        setBackground(Y7Palette);
+        Color Y4Palette = new Color(246, 243, 188);
+        setBackground(Y1Palette);
         UserNoteText.setBackground(Y4Palette);
+        save.setBackground(Y4Palette);
         //prolly wanna change the dimensions l8r, idc about that rn tho :/
         UserNoteScroll.setPreferredSize(new Dimension(250,250));
         

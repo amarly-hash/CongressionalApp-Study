@@ -56,8 +56,9 @@ public class CreateGUI extends JPanel
         
         Color Y8Palette = new Color(233, 171, 68);
         Color Y9Palette = new Color(98, 59, 52);
-        Color Y10Palette = new Color(143, 86, 59);
-        mainFrame.getContentPane().setBackground(Y9Palette);
+        Color Y10Palette = new Color(255, 224, 118);
+        Color Y11Palette = new Color(239, 228, 176);
+        mainFrame.getContentPane().setBackground(Y11Palette);
         TimePanel.setBackground(Y10Palette);
         NotePanel.setBackground(Y2Palette);
         //resizes the window based off the returned value

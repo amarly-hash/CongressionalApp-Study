@@ -26,6 +26,7 @@ public class notesContainer extends JPanel implements ActionListener
         //💫?Graphic design is my passion💫
         setBackground(Y2Palette);
         NoteText.setBackground(Y4Palette);
+        NoteLoadButton.setBackground(Y4Palette);
         //Formatting
         NoteText.setFont(new Font("Serif", Font.ITALIC, 16)); //sets the font (might wanna change it l8r)
         NoteText.setLineWrap(true);
@@ -33,7 +34,6 @@ public class notesContainer extends JPanel implements ActionListener
         NoteText.setEditable(false);
         //prolly wanna change the dimensions l8r, idc about that rn tho :/
         NoteScroll.setPreferredSize(new Dimension(250,250));
-        
         //adding to panel
         add(NoteLoadButton);
         add(NoteScroll);

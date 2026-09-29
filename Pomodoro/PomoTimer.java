@@ -100,7 +100,7 @@ public class PomoTimer
             System.out.println("WorkTimerUp"); 
             System.out.println(e);
         }
-
+        System.out.println(">:/");
         return true;
     }
     //same as the previous, just takes the break times instead
@@ -118,6 +118,18 @@ public class PomoTimer
         }
         return true;
     }
+    public static long ConvertTime(int hour, int min)
+    {
+        long TimeinMM = (hour * 3600000) + (min * 60000);
+        return TimeinMM;
+    }
+    
+    public static long ConvertTime(int hour, int min, int sec)
+    {
+        long TimeinMM = (hour * 3600000) + (min * 60000) + (sec * 1000);
+        return TimeinMM;
+    }
+    
     // dont forget to actually remove this, and connect it to a gui dude, you ARE presenting this to a panel of judges
     public static void main(String args[]) throws InterruptedException
     {
