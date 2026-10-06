@@ -2,7 +2,7 @@
 ![IDE](https://img.shields.io/badge/IDE-BlueJ-blue)
 
 
-This repository holds a program is a study aid for students made entirely in BlueJ.
+This repository holds a program that is a study aid for students made entirely in BlueJ.
 It features a: Pomodoro timer, clock, note taker, and note displayer
 
 <h1>Projects</h1>
