@@ -5,11 +5,6 @@
 This repository holds a program is a study aid for students made entirely in BlueJ.
 It features a: Pomodoro timer, clock, note taker, and note displayer
 
-# yo
-{
-  color: blue;
-}
-
 <h1>Projects</h1>
 
 <h2>Pomodoro Timer</h2>
@@ -27,16 +22,23 @@ It features a: Pomodoro timer, clock, note taker, and note displayer
 <h1>Packages</h1>
 
 <h2>Clock</h2>
-<p id="yo">This class gives the current time.</p>
+<p>This class gives the current time.</p>
 <h3>Methods</h3>
+<h4>displayTime()</h4>
+<p>returns the current time.</p>
 
 <h2>NoteReader</h2>
-<p>This class takes the notes file, and returns th data from the file.</p>
+<p>This class takes the notes file, and returns the data from the file, as well as takes the users notes as input, and stores them to a file.</p>
 <h3>Methods</h3>
-
+<h4>Notetaker()</h4>
+<p>Writes the notes to a file</p>
+<h4>getNotes()</h4>
+<p>returns the notes from a file after the path is passed to it.</p>
 <h2>Pomodoro</h2>
 <p>This class manages the pomodoro time, mostly though managing the time differences between the two.</p>
 <h3>Methods</h3>
+<h4>ConvertTime</h4>
+<p>Converts the time to miliseconds, one that takes hour and min, and one tha takes sec, hour, and min</p>
 
 
 
