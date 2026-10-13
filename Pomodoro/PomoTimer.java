@@ -3,9 +3,7 @@ package Pomodoro;
 import java.util.*;
 public class PomoTimer
 {
-    //THE TIMER WORKS, HUZZAH
-
-    //initializing variables for the constructor (realistically, you probably shouldve checked the documentation for the timer)
+    //initializing variables for the constructor 
     double hour;
     double min;
     double sec;
@@ -21,9 +19,7 @@ public class PomoTimer
         this.breakHour = breakHour;
         this.breakMin = breakMin;
         this.BreakSec = BreakSec;
-
     }
-    //we writing setter methods now ✌️#movingupintheworld
 
     public void setWorkPomoTimer(int newHour, int newMin, int newSec)
     {
@@ -31,7 +27,6 @@ public class PomoTimer
         min = newMin;
         sec = newSec;
     }
-    //gonna switch up on my day 1s
 
     public void setBreakPomoTimer(int newBreakHour, int newBreakMin, int newBreakSec)
     {
@@ -39,7 +34,6 @@ public class PomoTimer
         breakMin = newBreakMin;
         BreakSec = newBreakSec;
     }
-    //a getter method? how absurd
 
     public double getWorkPomoHour()
     {
@@ -55,7 +49,7 @@ public class PomoTimer
     {
         return sec;        
     }
-    // i guess we're doing getters now
+
     public double getPomoBreakHour()
     {
         return breakHour;
@@ -73,7 +67,6 @@ public class PomoTimer
     //This method basically starts the timer and forces the program to pause for that long. returns true once its done
     public boolean startPomodoro() 
     {
-        //so basically, what i gotta do is take the value from the getter, and turn it into miliseconds 
         long TotalWorkTime = (long) ((hour * 3600000) + (min * 60000) + (sec * 1000));
         try
         {
@@ -90,7 +83,6 @@ public class PomoTimer
 
     public boolean startPomodoro(long x) 
     {
-        //so basically, what i gotta do is take the value from the getter, and turn it into miliseconds 
         try
         {
             Thread.sleep(x);
@@ -128,27 +120,5 @@ public class PomoTimer
     {
         long TimeinMM = (hour * 3600000) + (min * 60000) + (sec * 1000);
         return TimeinMM;
-    }
-    
-    // dont forget to actually remove this, and connect it to a gui dude, you ARE presenting this to a panel of judges
-    public static void main(String args[]) throws InterruptedException
-    {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("please enter a number of hour(s) for the pomodoro: ");
-        int hour = scan.nextInt();
-        System.out.println("please enter a number of minutes for the pomodoro: ");
-        int min = scan.nextInt();
-        System.out.println("please enter a number of seconds for the pomodoro: ");
-        int sec = scan.nextInt();
-        System.out.println("please enter a number of hour(s) for the break: ");
-        int hourBreak = scan.nextInt();
-        System.out.println("please enter a number of minutes for the break: ");
-        int minBreak = scan.nextInt();
-        System.out.println("please enter a number of seconds for the break: ");
-        int secBreak = scan.nextInt();
-
-        PomoTimer pomodoro = new PomoTimer(hour, min, sec, hourBreak, minBreak, secBreak);
-        pomodoro.startPomodoro();
-
     }
 }

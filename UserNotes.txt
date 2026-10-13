@@ -1,1 +1,8 @@
-Type your notes here.
+Congressional app deadline is 10/26/2026
+
+TODO: Center Task Button
+add design to the todo panel
+rounded corners
+add static calendar at the bottom of window.
+fix pomodoro time issue
+then repackage, and re-release as ver 1.10

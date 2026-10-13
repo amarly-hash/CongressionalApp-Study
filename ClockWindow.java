@@ -41,4 +41,3 @@ public class ClockWindow extends JPanel
         //Clock.setVisible(true);
     }
 }
-

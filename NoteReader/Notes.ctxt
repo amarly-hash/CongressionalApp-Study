@@ -4,6 +4,4 @@ comment1.params=
 comment1.target=void\ Notetaker()
 comment2.params=Path
 comment2.target=java.lang.String\ getNotes(java.lang.String)
-comment3.params=args
-comment3.target=void\ main(java.lang.String[])
-numComments=4
+numComments=3

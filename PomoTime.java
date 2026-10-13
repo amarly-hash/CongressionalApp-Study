@@ -19,9 +19,10 @@ public class PomoTime extends JPanel
        @Override
        public void actionPerformed(ActionEvent e)
        {
-           timeinMM--;           
+           timeinMM--;
+           timeinsec--;
            long now = System.currentTimeMillis();
-           long clockTime = now - startTime;           
+           long clockTime = now - startTime;   
            if (timeinMM <= 0)
            {
                time.stop();
@@ -29,10 +30,10 @@ public class PomoTime extends JPanel
            if (timeinMM == (300000/1000))
            {PomoTime.BreakPopup();}
            SimpleDateFormat df = new SimpleDateFormat("mm:ss");
-           PomoLabel.setText(df.format(timeinMM));
+           PomoLabel.setText(df.format(timeinsec*1000));
        }
     };
-    Timer time = new Timer(1, Countdown);
+    Timer time = new Timer(500, Countdown);
     public PomoTime()
     {
         PomoLabel.setText("Time Remaining: 0:00");

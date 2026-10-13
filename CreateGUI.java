@@ -1,20 +1,21 @@
 import javax.swing.*;
 import java.awt.*;
-public class CreateGUI extends JPanel
+import java.awt.event.*;
+import java.awt.image.*;
+import java.io.IOException;
+import java.io.*;
+import javax.imageio.ImageIO;
+
+public class CreateGUI extends JFrame
 {
     //creates instances of the panels
     public static PomoTime PomodoroWindow = new PomoTime();
     public static ClockWindow clockInstance = new ClockWindow();
     public static notesContainer notesWindow = new notesContainer();
     public static notesTaker notewriter = new notesTaker(); 
+    public static ToDoChecker ToDo = new ToDoChecker();
     //constuctor that sets up the frame for the program
     public CreateGUI() 
-    {
-        
-    }
-    //main function, self explanitory
-    /*#THIS IS NOT THREAD SAFE!!!!!!!!*/
-    public static void main(String args[])
     {
         //setting look and feel, and returns the exception if anything goes wrong.
         try
@@ -41,31 +42,32 @@ public class CreateGUI extends JPanel
         
         NotePanel.add(notesWindow);
         NotePanel.add(notewriter);
-        mainFrame.add(TimePanel);
-        mainFrame.add(NotePanel);
+        add(TimePanel);
+        add(NotePanel);
+        add(ToDo);
         //Formatting, adding, and other housekeeping
-        mainFrame.setLayout(new FlowLayout());   
-        //mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new FlowLayout());
+        ImageIcon img = new ImageIcon(getClass().getClassLoader().getResource("StudyIcon.jpg"));
+
         //Colors from palette, for easy ref
-        Color Y1Palette = new Color(251, 242, 53);
         Color Y2Palette = new Color(247, 241, 143);
-       
-        Color Y4Palette = new Color(246, 243, 188);
-        Color Y5Palette = new Color(245, 247, 255);
-        Color Y6Palette = new Color(218, 218, 218);
-        
-        Color Y8Palette = new Color(233, 171, 68);
-        Color Y9Palette = new Color(98, 59, 52);
         Color Y10Palette = new Color(255, 224, 118);
         Color Y11Palette = new Color(239, 228, 176);
-        mainFrame.getContentPane().setBackground(Y11Palette);
+        getContentPane().setBackground(Y11Palette);
         TimePanel.setBackground(Y10Palette);
         NotePanel.setBackground(Y2Palette);
-        //resizes the window based off the returned value
-        mainFrame.setSize((WindowSize.width / 5), WindowSize.height);
-
-        //final touches
-        mainFrame.setVisible(true);
+        setIconImage(img.getImage());
         
+        //resizes the window based off the returned value
+        setSize((WindowSize.width / 5), WindowSize.height);
+        setResizable(false);
+        //final touches
+        setVisible(true);        
+    }
+    //main function, self explanitory
+    /*#THIS IS NOT THREAD SAFE!!!!!!!!*/
+    public static void main(String args[])
+    {
+        CreateGUI StudySupplement = new CreateGUI();
     }
 }
